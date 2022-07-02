@@ -5,6 +5,7 @@ local icons      = ZapVim.icons
 
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('repo')
+require('telescope').load_extension('harpoon')
 
 local git_icons = {
   added = icons.gitAdd,

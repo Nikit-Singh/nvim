@@ -12,7 +12,8 @@ return packer.startup(function(use)
   use { 'goolord/alpha-nvim', config = "require 'plugins.alpha'" }
 
   -- Themes
-  use { 'folke/tokyonight.nvim' }
+  -- use { 'folke/tokyonight.nvim' }
+  use { 'luisiacc/gruvbox-baby', branch= 'main'}
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', config = "require 'plugins.treesitter'" }
@@ -63,7 +64,8 @@ return packer.startup(function(use)
   use { 'tpope/vim-surround' } -- Change or delete surrounding quotes or bracket or tags
   use { 'tpope/vim-repeat' } -- Use . to repeat some weird non repeatable commands and also support vim-surround
   use { 'junegunn/vim-easy-align' } -- Easy align
-  use { 'nacro90/numb.nvim', config = function () require 'numb' .setup() end } -- Peak line when type :linenumber
+  use { 'ThePrimeagen/harpoon', config = function () require('harpoon').setup() end } -- Move between marks easily
+  use { 'nacro90/numb.nvim', config = function() require('numb').setup() end } -- Peak line when type :linenumber
   use { 'mg979/vim-visual-multi' } -- Visual multi-cursors
   use { 'ggandor/lightspeed.nvim' } -- Easy motion
   use { 'antoinemadec/FixCursorHold.nvim' }
@@ -85,6 +87,7 @@ return packer.startup(function(use)
   use { 'L3MON4D3/LuaSnip', requires = { 'rafamadriz/friendly-snippets' }, after = 'cmp_luasnip' }
 
   -- Git
+  use { 'tpope/vim-fugitive' }
   use { 'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = "require('plugins.gitsigns')",
@@ -92,5 +95,6 @@ return packer.startup(function(use)
   }
   use { 'sindrets/diffview.nvim' }
   use { 'akinsho/git-conflict.nvim', config = function() require('git-conflict').setup() end }
+  use { 'kevinhwang91/nvim-ufo', requires = { 'kevinhwang91/promise-async' }, config = function() require('plugins.ufo') end }
 
 end)

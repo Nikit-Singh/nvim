@@ -9,8 +9,8 @@
 local icons = require('icons')
 
 ZapVim = {
-  colorscheme = 'tokyonight',
-  colorscheme_variant = 'storm',
+  colorscheme = 'gruvbox-baby',
+  -- colorscheme_variant = 'storm',
   ui = {
     float = {
       border = 'single'

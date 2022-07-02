@@ -1,3 +1,6 @@
+vim.cmd('colorscheme gruvbox-baby')
+
+--[[
 local present, tk_colors = pcall(require, "tokyonight.colors")
 if not present then
   return
@@ -79,4 +82,4 @@ if vim.g.colors_name == 'tokyonight' then
     vim.api.nvim_set_hl(0, group, hl)
   end
 end
-
+--]]
