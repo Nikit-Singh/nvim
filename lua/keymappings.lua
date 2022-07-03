@@ -34,6 +34,10 @@ keymap("n", "<CR>", ":noh<CR><CR>", silent)
 keymap("n", "<Leader>,", ":cp<CR>", silent)
 keymap("n", "<Leader>.", ":cn<CR>", silent)
 
+-- Resie Splits
+keymap("n", "<C-Left>", ":vertical resize +1<CR>", silent)
+keymap("n", "<C-Right>", ":vertical resize -1<CR>", silent)
+
 -- Toggle quicklist
 keymap("n", "<Leader>q", "<cmd>lua require('utils').toggle_quicklist()<CR>", silent)
 
@@ -50,11 +54,10 @@ end
 
 -- Telescope
 keymap("n", "<Leader>ff", "<CMD>lua require('plugins.telescope').project_files()<CR>")
--- keymap("n", "<S-p>", "<CMD>lua require('plugins.telescope.pickers.multi-rg')()<CR>")
---
+
 -- Find word/file across project
 keymap("n", "<Leader>fp", "<CMD>lua require('plugins.telescope').project_files({ default_text = vim.fn.expand('<cword>'), initial_mode = 'normal' })<CR>")
-keymap("n", "<Leader>fw", "<CMD>lua require('telescope.builtin').grep_string({ initial_mode = 'insert' })<CR>")
+keymap("n", "<Leader>fw", "<CMD>lua require('telescope.builtin').live_grep()<CR>")
 
 -- Git
 keymap("n", "<Leader>fga", "<CMD>lua require('plugins.telescope').my_git_commits()<CR>", {})
@@ -94,8 +97,8 @@ keymap("v", "<leader>cf", "<cmd>'<.'>lua vim.lsp.buf.range_formatting()<CR>", si
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", silent)
 keymap("n", "L", "<cmd>lua vim.lsp.buf.signature_help()<CR>", silent)
 keymap("n", "<leader>cl", "<cmd>lua vim.diagnostic.open_float({ border = 'rounded', max_width = 100 })<CR>", silent)
-keymap("n", "]g", "<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded', max_width = 100 }})<CR>", silent)
-keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded', max_width = 100 }})<CR>", silent)
+keymap("n", "]n", "<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded', max_width = 100 }})<CR>", silent)
+keymap("n", "[n", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded', max_width = 100 }})<CR>", silent)
 
 -- Harpoon
 keymap("n", "<leader>hm", "<cmd>lua require('harpoon.mark').add_file()<CR>", silent)

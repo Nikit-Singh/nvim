@@ -1,4 +1,4 @@
--- Config heavily inspired by https://github.dev/ecosse3/nvim
+-- Config heavily inspired by https://github.com/ecosse3/nvim
 local loaded, impatient = pcall(require, "impatient")
 
 if not loaded then

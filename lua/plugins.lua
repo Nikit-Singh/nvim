@@ -13,13 +13,14 @@ return packer.startup(function(use)
 
   -- Themes
   -- use { 'folke/tokyonight.nvim' }
-  use { 'luisiacc/gruvbox-baby', branch= 'main'}
+  -- use { 'luisiacc/gruvbox-baby', branch = 'main' }
+  use { 'rebelot/kanagawa.nvim' }
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', config = "require 'plugins.treesitter'" }
   use { 'nvim-treesitter/nvim-treesitter-textobjects', after = { 'nvim-treesitter' } }
   use { 'RRethy/nvim-treesitter-textsubjects', after = { 'nvim-treesitter' } }
-  use { 'm-demare/hlargs.nvim', config = function() require 'hlargs' .setup() end }
+  use { 'm-demare/hlargs.nvim', config = function() require 'hlargs'.setup() end }
   use { 'JoosepAlviste/nvim-ts-context-commentstring', after = 'nvim-treesitter' }
 
   -- Navigating (Telescope/Tree/Refactor)
@@ -49,7 +50,8 @@ return packer.startup(function(use)
   use { 'hrsh7th/cmp-path', after = 'cmp-buffer' }
   use { 'hrsh7th/cmp-cmdline', after = 'cmp-path' }
   use { 'hrsh7th/cmp-calc', after = 'cmp-cmdline' }
-  use { 'David-Kunz/cmp-npm', after = 'cmp-calc', requires = 'nvim-lua/plenary.nvim', config = "require('plugins.cmp-npm')" }
+  use { 'David-Kunz/cmp-npm', after = 'cmp-calc', requires = 'nvim-lua/plenary.nvim',
+    config = "require('plugins.cmp-npm')" }
   use { 'saadparwaiz1/cmp_luasnip', after = 'cmp-npm' }
 
   -- LSP Addons
@@ -64,12 +66,13 @@ return packer.startup(function(use)
   use { 'tpope/vim-surround' } -- Change or delete surrounding quotes or bracket or tags
   use { 'tpope/vim-repeat' } -- Use . to repeat some weird non repeatable commands and also support vim-surround
   use { 'junegunn/vim-easy-align' } -- Easy align
-  use { 'ThePrimeagen/harpoon', config = function () require('harpoon').setup() end } -- Move between marks easily
+  use { 'ThePrimeagen/harpoon', config = function() require('harpoon').setup() end } -- Move between marks easily
   use { 'nacro90/numb.nvim', config = function() require('numb').setup() end } -- Peak line when type :linenumber
   use { 'mg979/vim-visual-multi' } -- Visual multi-cursors
   use { 'ggandor/lightspeed.nvim' } -- Easy motion
   use { 'antoinemadec/FixCursorHold.nvim' }
-  use { 'iamcco/markdown-preview.nvim', run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" } }
+  use { 'iamcco/markdown-preview.nvim', run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" } }
   use { 'airblade/vim-rooter', setup = function() vim.g.rooter_patterns = ZapVim.plugins.rooter.patterns end }
   use { 'Shatur/neovim-session-manager', config = "require('plugins.session-manager')" }
   use { 'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons' }, config = "require('plugins.barbar')" }
@@ -95,6 +98,7 @@ return packer.startup(function(use)
   }
   use { 'sindrets/diffview.nvim' }
   use { 'akinsho/git-conflict.nvim', config = function() require('git-conflict').setup() end }
-  use { 'kevinhwang91/nvim-ufo', requires = { 'kevinhwang91/promise-async' }, config = function() require('plugins.ufo') end }
+  use { 'kevinhwang91/nvim-ufo', requires = { 'kevinhwang91/promise-async' },
+    config = function() require('plugins.ufo') end }
 
 end)

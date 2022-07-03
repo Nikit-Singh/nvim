@@ -1,4 +1,6 @@
-vim.cmd('colorscheme gruvbox-baby')
+vim.cmd('colorscheme kanagawa')
+
+-- vim.cmd('colorscheme gruvbox-baby')
 
 --[[
 local present, tk_colors = pcall(require, "tokyonight.colors")
