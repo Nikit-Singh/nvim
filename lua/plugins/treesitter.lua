@@ -1,7 +1,9 @@
-require'nvim-treesitter.configs'.setup {
+local kanagawa_colors = require("kanagawa.colors").setup()
+
+require 'nvim-treesitter.configs'.setup {
   ensure_installed = {}, -- one of "all", or a list of languages
-  sync_install = false,            -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "haskell" },  -- list of parsers to ignore installing
+  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+  ignore_install = { "haskell" }, -- list of parsers to ignore installing
   highlight = {
     enable = true,
     -- disable = { "c", "rust" },  -- list of language that will be disabled
@@ -23,7 +25,15 @@ require'nvim-treesitter.configs'.setup {
   },
 
   rainbow = {
-    enable = true
+    enable = true,
+    colors = {
+      kanagawa_colors.springGreen,
+      kanagawa_colors.surimiOrange,
+      kanagawa_colors.springBlue,
+      kanagawa_colors.oniViolet,
+      kanagawa_colors.sakuraPink,
+      kanagawa_colors.carpYellow,
+    }
   },
 
   context_commentstring = {
@@ -81,4 +91,3 @@ require'nvim-treesitter.configs'.setup {
     }
   },
 }
-

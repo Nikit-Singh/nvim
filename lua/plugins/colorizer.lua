@@ -11,7 +11,7 @@ require 'colorizer'.setup(
     css_fn   = true;         -- Enable all CSS *functions*: rgb_fn, hsl_fn
 
     -- Available modes: foreground, background, virtualtext
-    mode = 'virtualtext'
+    mode = 'background'
   }
 )
 

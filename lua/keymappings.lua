@@ -1,6 +1,9 @@
 local keymap = vim.keymap.set
 local silent = { silent = true }
 
+-- Reload neovim
+keymap('n', "<Leader><CR>", ":luafile %<CR>", silent)
+
 -- Better window movement
 keymap("n", "<C-h>", "<C-w>h", silent)
 keymap("n", "<C-j>", "<C-w>j", silent)
@@ -56,8 +59,10 @@ end
 keymap("n", "<Leader>ff", "<CMD>lua require('plugins.telescope').project_files()<CR>")
 
 -- Find word/file across project
-keymap("n", "<Leader>fp", "<CMD>lua require('plugins.telescope').project_files({ default_text = vim.fn.expand('<cword>'), initial_mode = 'normal' })<CR>")
+keymap("n", "<Leader>fp",
+  "<CMD>lua require('plugins.telescope').project_files({ default_text = vim.fn.expand('<cword>'), initial_mode = 'normal' })<CR>")
 keymap("n", "<Leader>fw", "<CMD>lua require('telescope.builtin').live_grep()<CR>")
+keymap("v", "<Leader>fw", "<CMD>lua require('telescope.builtin').grep_string({default_text = vim.fn.expand('<cword>')})<CR>")
 
 -- Git
 keymap("n", "<Leader>fga", "<CMD>lua require('plugins.telescope').my_git_commits()<CR>", {})
@@ -87,7 +92,7 @@ keymap("v", "<Leader>ra", "<cmd>lua require('spectre').open_visual()<CR>")
 
 -- LSP
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", silent)
-keymap("n", "gr", "<cmd>lua vim.lsp.buf.references({ includeDeclaration = false })<CR>", silent)
+keymap("n", "gi", "<cmd>lua vim.lsp.buf.references({ includeDeclaration = false })<CR>", silent)
 keymap("n", "<C-Space>", "<cmd>lua vim.lsp.buf.code_action()<CR>", silent)
 keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", silent)
 keymap("v", "<leader>ca", "<cmd>'<,'>lua vim.lsp.buf.range_code_action()<CR>", silent)

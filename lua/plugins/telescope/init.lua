@@ -28,9 +28,12 @@ require('telescope').setup {
       '--column',
       '--smart-case'
     },
-    layout_config     = {
+    layout_config = {
+      -- horizontal = {
+      --   preview_cutoff = 120,
+      -- },
       horizontal = {
-        preview_cutoff = 120,
+        width = 0.95,
       },
       prompt_position = "top",
     },
@@ -55,7 +58,6 @@ require('telescope').setup {
         ["<C-s>"] = actions.cycle_previewers_next,
         ["<C-a>"] = actions.cycle_previewers_prev,
         ["<C-h>"] = "which_key",
-        ["<ESC>"] = actions.close,
       },
       n = {
         ["<C-s>"] = actions.cycle_previewers_next,

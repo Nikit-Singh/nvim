@@ -14,7 +14,7 @@ return packer.startup(function(use)
   -- Themes
   -- use { 'folke/tokyonight.nvim' }
   -- use { 'luisiacc/gruvbox-baby', branch = 'main' }
-  use { 'rebelot/kanagawa.nvim' }
+  use { 'rebelot/kanagawa.nvim', config = "require 'plugins.kanagawa'" }
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', config = "require 'plugins.treesitter'" }
